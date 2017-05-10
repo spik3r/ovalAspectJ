@@ -1,0 +1,54 @@
+import org.aspectj.bridge.MessageHandler
+import org.aspectj.tools.ajc.Main
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.aspectj:aspectjtools:1.8.10'
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+dependencies {
+    compile 'org.aspectj:aspectjrt:1.8.1'
+    compile 'net.sf.oval:oval:1.86'
+    compile 'org.jetbrains:annotations-java5:15.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+startScripts.enabled = false
+
+compileJava {
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.3'
+}
+
+tasks.withType(JavaCompile) {
+    doLast {
+        String[] args = ["-showWeaveInfo",
+                         "-1.8",
+                         "-inpath", destinationDir.toString(),
+                         "-aspectpath", classpath.asPath,
+                         "-d", destinationDir.toString(),
+                         "-classpath", classpath.asPath]
+
+        MessageHandler handler = new MessageHandler(true);
+        new Main().run(args, handler)
+    }
+}

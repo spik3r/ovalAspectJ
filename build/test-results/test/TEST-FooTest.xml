@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FooTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2017-05-10T13:59:37" hostname="Kais-Air.gateway" time="0.049">
+  <properties/>
+  <testcase name="constructorCalled_blankName_ThrowsException" classname="FooTest" time="0.046"/>
+  <testcase name="constructorCalled_ValidParams_FooCreated" classname="FooTest" time="0.0"/>
+  <testcase name="constructorCalled_nullName_ThrowsException" classname="FooTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[May 10, 2017 11:59:37 PM net.sf.oval.internal.Log info
+INFO: Instantiated
+]]></system-err>
+</testsuite>
