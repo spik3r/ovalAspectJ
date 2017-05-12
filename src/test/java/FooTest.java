@@ -8,17 +8,22 @@ public class FooTest {
 
     @Test
     public void constructorCalled_ValidParams_FooCreated() {
-        Foo foo = new Foo("bar");
+        Foo foo = new Foo("bar", new InnerFoo("coffee bean"));
         assertThat(foo.getName(), is("bar"));
     }
     
     @Test(expected = ConstraintsViolatedException.class)
-    public void constructorCalled_nullName_ThrowsException() {
-        new Foo(null);
+    public void constructorCalled_innerObjectNullField_ThrowsException() {
+        new Foo(null, new InnerFoo(null));
     }
     
     @Test(expected = ConstraintsViolatedException.class)
-    public void constructorCalled_blankName_ThrowsException() {
-        new Foo("");
+    public void constructorCalled_bothParamsNull_ThrowsException() {
+        new Foo(null, null);
+    }
+    
+    @Test(expected = ConstraintsViolatedException.class)
+    public void constructorCalled_innerObjectNull_ThrowsException() {
+        new Foo("foooo", null);
     }
 }

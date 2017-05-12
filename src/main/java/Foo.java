@@ -6,12 +6,18 @@ import net.sf.oval.guard.Guarded;
 public class Foo {
     
     private final String name;
+    private final InnerFoo innerFoo;
     
-    public Foo(@NotNull @NotEmpty final String name) {
+    public Foo(@NotNull @NotEmpty final String name, @NotNull InnerFoo innerFoo) {
         this.name = name;
+        this.innerFoo = innerFoo;
     }
     
     public String getName() {
         return this.name;
+    }
+    
+    public InnerFoo getInnerFoo() {
+        return this.innerFoo;
     }
 }
