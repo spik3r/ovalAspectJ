@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FooTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-05-17T23:19:28" hostname="DESKTOP-0010" time="0.024">
+<testsuite name="FooTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-05-18T02:57:25" hostname="DESKTOP-0010" time="0.025">
   <properties/>
-  <testcase name="constructorCalled_innerObjectNull_ThrowsException" classname="FooTest" time="0.022"/>
-  <testcase name="constructorCalled_bothParamsNull_ThrowsException" classname="FooTest" time="0.001"/>
+  <testcase name="constructorCalled_innerObjectNull_ThrowsException" classname="FooTest" time="0.023"/>
+  <testcase name="constructorCalled_bothParamsNull_ThrowsException" classname="FooTest" time="0.0"/>
   <testcase name="constructorCalled_ValidParams_FooCreated" classname="FooTest" time="0.001"/>
-  <testcase name="constructorCalled_innerObjectNullField_ThrowsException" classname="FooTest" time="0.0"/>
+  <testcase name="constructorCalled_innerObjectNullField_ThrowsException" classname="FooTest" time="0.001"/>
   <testcase name="constructorCalled_innerObjectCanBeNullFalseWithNullField_NoException" classname="FooTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[May 18, 2017 9:19:28 AM net.sf.oval.internal.Log info
+  <system-err><![CDATA[May 18, 2017 12:57:25 PM net.sf.oval.internal.Log info
 INFO: Instantiated
 ]]></system-err>
 </testsuite>
