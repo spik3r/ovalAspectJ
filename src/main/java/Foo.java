@@ -1,3 +1,4 @@
+import net.sf.oval.constraint.AssertValid;
 import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import net.sf.oval.guard.Guarded;
@@ -8,7 +9,8 @@ public class Foo {
     private final String name;
     private final InnerFoo innerFoo;
     
-    public Foo(@NotNull @NotEmpty final String name, @NotNull InnerFoo innerFoo) {
+    public Foo(@NotNull @NotEmpty final String name,
+               @NotNull InnerFoo innerFoo) {
         this.name = name;
         this.innerFoo = innerFoo;
     }

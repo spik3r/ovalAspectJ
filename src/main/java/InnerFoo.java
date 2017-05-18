@@ -6,9 +6,13 @@ import net.sf.oval.guard.Guarded;
  */
 @Guarded
 public class InnerFoo {
+    private final Boolean canBeNull;
     private final String description;
     
-    public InnerFoo(@NotNull final String description) {
+    
+    public InnerFoo(@NotNull final Boolean canBeNull,
+                    @NotNull final String description) {
+        this.canBeNull = canBeNull;
         this.description = description;
     }
 }

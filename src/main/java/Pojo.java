@@ -1,18 +1,25 @@
 import net.sf.oval.constraint.NotNull;
+import net.sf.oval.guard.Guarded;
+import net.sf.oval.guard.PostValidateThis;
 
 /**
- * Created by kai on 10/5/17.
+ * Created by kai-tait on 17/05/2017.
  */
+
+@Guarded
 public class Pojo {
-
-    @NotNull
-    private String data;
-
-    public Pojo(String data) {
-        this.data = data;
+    public String fieldA;
+    
+    @NotNull(when = "javascript:_this.fieldA != null")
+    private String fieldB;
+    
+    @PostValidateThis
+    public Pojo(String fieldA, String fieldB) {
+        this.fieldA = fieldA;
+        this.fieldB = fieldB;
     }
-    public String getData(){
-        return this.data;
+    
+    public String getFieldA() {
+        return this.fieldA;
     }
-
 }
