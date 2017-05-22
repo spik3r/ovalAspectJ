@@ -8,12 +8,12 @@ import org.junit.Test;
  */
 public class PojoTest
 {
-    //@Test
+    @Test
     public void fieldANullFieldBNotValidated() {
         Pojo pojo = new Pojo(null, null);
     }
     
-    //@Test(expected = ConstraintsViolatedException.class)
+    @Test(expected = ConstraintsViolatedException.class)
     public void fieldANotNullFieldBValidatedThrowsException() {
         Pojo pojo = new Pojo("A", null);
     }
